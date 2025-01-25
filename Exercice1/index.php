@@ -1,3 +1,3 @@
 <?php
-  echo "main page"
+  echo "main page";
 ?>
