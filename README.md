@@ -3,15 +3,22 @@ Systeme de gestion de bibliotheque avec calcul de frais de retard et algorithme 
 
 ## Recherche a faire:
 #### algoritme de donne pour faire de la recherche efficace
+## algorithme de recherche auto  completion
 - distance leveinschtene
 - fuzzy peach theorie
+## algorithme de navigation
+- premier node est un hashed
+- je pense le reste pourrait etre enumerer? 
   
 ### files a faire
 ##  --formulaire(index)--
 gere la date  et la date de retour du livre choisi
 - [ ] faire le formulaire
 - [ ] trouver le nombre de jour entre la date demprunt et la date de retour
-- [ ] tester 
+- [ ] tester
+
+## -- book --
+user define type
 ## -- gestion des locations --
 - [ ] regarde le jour de retour et rajoute les frais si necessaire
 - [ ] 
