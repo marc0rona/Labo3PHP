@@ -6,22 +6,31 @@ Systeme de gestion de bibliotheque avec calcul de frais de retard et algorithme 
 ## algorithme de recherche auto  completion
 - distance leveinschtene
 - fuzzy peach theorie
-## algorithme de navigation
-- premier node est un hashed
-- je pense le reste pourrait etre enumerer? 
-  
+#### algoritme de navigation
+
+
+
 ### files a faire
 ##  --formulaire(index)--
 gere la date  et la date de retour du livre choisi
 - [ ] faire le formulaire
 - [ ] trouver le nombre de jour entre la date demprunt et la date de retour
+- [ ] tester 
+## -- livre model --
+user-define type
+- [x] donner les attributs necessaire
+- [x] creer un public constructor
+- [x] creer des getters
+- [ ] rajouter un toString
 - [ ] tester
 
-## -- book --
-user define type
+## -- location --
+class qui prends des livres et sassure qu'ils sont disponible(si nous avons le temps)
+- [x] necessaire prendre plusieurs livres
+- [ ] creer le Tostring() necessaire
+- [ ] optionnel regarder si le livre est dispo 
 ## -- gestion des locations --
 - [ ] regarde le jour de retour et rajoute les frais si necessaire
-- [ ] 
 - [ ] tester 
 ## -- barre de recherche --
 - [ ]implimentation dun algorithm de recherche
