@@ -3,6 +3,7 @@ Systeme de gestion de bibliotheque avec calcul de frais de retard et algorithme 
 
 ## Recherche a faire:
 #### algoritme de donne pour faire de la recherche efficace
+## algorithme de recherche auto  completion
 - distance leveinschtene
 - fuzzy peach theorie
 #### algoritme de navigation
