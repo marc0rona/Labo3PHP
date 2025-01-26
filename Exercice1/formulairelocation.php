@@ -1,3 +1,4 @@
+<!--permet de prendre une location et l'emvoyer a gestion des ocation-->
 <?php
   //Fetch date d'auj. pour le mettre automatiquement dans le input quand la page se Load
   $currDate = date('Y-m-d');
