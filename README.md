@@ -21,16 +21,21 @@ user-define type
 - [x] donner les attributs necessaire
 - [x] creer un public constructor
 - [x] creer des getters
-- [ ] rajouter un toString
+- [ ] creer le Tostring() necessaire
 - [ ] tester
 
 ## -- location --
 class qui prends des livres et sassure qu'ils sont disponible(si nous avons le temps)
 - [x] necessaire prendre plusieurs livres
 - [ ] creer le Tostring() necessaire
-- [ ] optionnel regarder si le livre est dispo 
+- [ ] optionnel regarder si le livre est dispo
+
 ## -- gestion des locations --
-- [ ] regarde le jour de retour et rajoute les frais si necessaire
+- [x] rajoute ou creer un fichier xml 
+- [ ] tester 
+## -- gestion des retour --
+- [x] lit a travers le fichiers xml 
+- [x] regarde le jour de retour et rajoute les frais si necessair
 - [ ] tester 
 ## -- barre de recherche --
 - [ ]implimentation dun algorithm de recherche
@@ -41,15 +46,12 @@ Creer un programme qui calcule le salaire net d’un employee en tenant compte d
 
 ## recherche a faire
 - suite arithmetique
-
+  $$ u_n = u_0 + n \cdot r $$
 ### files a faire
 
 ## -- formulaire de salaire --
 L’utilisateur entre le salaire de base, le nombre d’heures supplementaires et les absences.
 - [ ]creation du formulaire
-
-## -- Employee model --
-user define-type 
 
 ## -- gestion des salaire --
 - [ ] retourne le hedomadaire salaire
@@ -58,7 +60,7 @@ user define-type
 
 
 # Exercice 3
-Creer un systeme de gestion de stock qui suit les niveaux d’inventaire et genere des alertes lorsque le stock est faible, et inclut un calcul base sur la table de multiplication pour g´erer les quantit´es de produits en stock.
+Creer un systeme de gestion de stock qui suit les niveaux d’inventaire et genere des alertes lorsque le stock est faible, et inclut un calcul base sur la table de multiplication pour gerer les quantit´es de produits en stock.
 
 ## recherche a faire
 pourquoi devoir implimenter un table de multiplication
