@@ -2,10 +2,10 @@
 require "livre.php";
 //user define type qui permet la location de plusieurs livre,
 class location{
-    private Book $books=[]
+    private $id;
     private $start_date;
     private $end_date;
-
+    private Book $books=[];
     //constructeur
     function __construct(DateTime $start_date,DateTime $end_date){
         setStartDate($start_date);
@@ -32,6 +32,13 @@ class location{
     }
     public function getEndDate(){
         return $this->end_date;
+    }
+
+    public function getId(){
+        return $this->id;
+    }
+    public function getBooks(){
+        return $this->books;
     }
 }
 
