@@ -38,23 +38,23 @@ class qui prends des livres et sassure qu'ils sont disponible(si nous avons le t
 
 # Exercice 2
 Creer un programme qui calcule le salaire net d’un employee en tenant compte des bonus et des penalites, et resout des suites arithmetiques pour les augmentations salariales.
-
+- [ ] tester
 ## recherche a faire
 - suite arithmetique
 
 ### files a faire
 
 ## -- formulaire de salaire --
+-
 L’utilisateur entre le salaire de base, le nombre d’heures supplementaires et les absences.
-- [ ]creation du formulaire
+- [x]creation du formulaire
 
-## -- Employee model --
-user define-type 
 
 ## -- gestion des salaire --
-- [ ] retourne le hedomadaire salaire
-- [ ] gestion des bonus et des impots
-- [ ] gestion de la suite arithmetique
+- [x] retourne le  salaire annuel
+- [x] gestion des bonus 
+- [ ] des impots
+- [x] gestion de la suite arithmetique
 
 
 # Exercice 3

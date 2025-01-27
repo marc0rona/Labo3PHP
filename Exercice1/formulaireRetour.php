@@ -1,0 +1,1 @@
+<!--premet de prendre une location et envoyer a gestion des retour-->
