@@ -46,7 +46,13 @@ Creer un programme qui calcule le salaire net d’un employee en tenant compte d
 
 ## recherche a faire
 - suite arithmetique
-- \( u_n = u_0 + n \cdot r \)
+- u_n = u_0 + n * r--> formule trouver
+
+-  modifier en -->
+  revenueNet _ anne-->infini = revenueNet _ 0  + revenueNet _ anne-->infini * r
+toute sa pour dire de faire un while loop ahahah
+
+
 ### files a faire
 
 ## -- formulaire de salaire --
