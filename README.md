@@ -57,8 +57,7 @@ toute sa pour dire de faire un while loop ahahah
 
 ## -- formulaire de salaire --
 L’utilisateur entre le salaire de base, le nombre d’heures supplementaires et les absences.
-- [x]creation du formulaire
-- [ ]creation du formulaire
+- [x] creation du formulaire
 
 ## -- gestion des salaire --
 - [x] retourne le  salaire annuel
