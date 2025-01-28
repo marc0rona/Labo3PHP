@@ -56,7 +56,6 @@ toute sa pour dire de faire un while loop ahahah
 ### files a faire
 
 ## -- formulaire de salaire --
--
 L’utilisateur entre le salaire de base, le nombre d’heures supplementaires et les absences.
 - [x] creation du formulaire
 
