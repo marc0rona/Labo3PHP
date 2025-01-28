@@ -65,7 +65,7 @@ L’utilisateur entre le salaire de base, le nombre d’heures supplementaires e
 ## -- gestion des salaire --
 - [x] retourne le  salaire annuel
 - [x] gestion des bonus 
-- [ ] des impots
+- [x] des impots
 - [x] gestion de la suite arithmetique
 
 
