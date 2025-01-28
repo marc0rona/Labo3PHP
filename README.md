@@ -58,14 +58,12 @@ toute sa pour dire de faire un while loop ahahah
 ## -- formulaire de salaire --
 -
 L’utilisateur entre le salaire de base, le nombre d’heures supplementaires et les absences.
-- [x]creation du formulaire
-
-- [ ]creation du formulaire
+- [x] creation du formulaire
 
 ## -- gestion des salaire --
 - [x] retourne le  salaire annuel
 - [x] gestion des bonus 
-- [ ] des impots
+- [x] des impots
 - [x] gestion de la suite arithmetique
 
 
@@ -80,8 +78,8 @@ pourquoi devoir implimenter un table de multiplication
 - [ ] formulaire pour achater des produits avec leur quantite
 
 ## -- inventaire --
-- [ ] detient l'inventaire
-- [ ] afficher la liste
+- [x] detient l'inventaire
+- [x] afficher la liste
 ## -- gestion d'inventaire --
 - [ ]  il observe le nombre de produit de stock
 - [ ]  il gere les seuil critique
