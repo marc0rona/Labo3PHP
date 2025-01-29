@@ -7,7 +7,7 @@ $location=$_POST['location'];
 $xml=new DOMDocument();
 $xml->formatOutput=true;
 
-$roots=$xml->createElement('location')
+$roots=$xml->createElement('location');
 $xml->appendChild($roots);
 
 $elements1 = $xml->createElement('id');
@@ -21,12 +21,13 @@ $roots->appendChild($elements2);
 $elements3 = $xml->createElement('endDate');
 $elements3 -> nodeValue=$location->getEndDate();
 $roots->appendChild($elements3);
+
 //append les livres dans la locations
-$books=$location->getBooks()
-foreach($books as $book){
+$books=$location->getBooks();
+foreach($books as $book)
+{
     $elements4 = $xml->createElement('book');
     $roots->appendChild($elements4);
-
 
     $bookElement1 = $xml->createElement('name');
     $bookElement1=$books->getBookName();

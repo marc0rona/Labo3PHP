@@ -23,8 +23,8 @@
     <input type="number" id="hoursXtra" name="hoursXtra" min=0 max=24 style="width: 110px;" required>  
     <br><br> <!--Input : heures absences c des jours d'absence je crois-->
 
-    <label for="joursAbsent">jours absent : </label><br>
-    <input type="number" id="joursAbsent" name="joursAbsent"min=0 max=7 style="width: 110px;" equired> 
+    <label for="daysAbsent">jours absent : </label><br>
+    <input type="number" id="daysAbsent" name="daysAbsent"min=0 max=7 style="width: 110px;" equired> 
     <br><br>
 
     <button type="submit"> Confirmation d'Emprunt </button>
@@ -51,7 +51,7 @@
     $salaire=$_POST['initSalary'];
     $heure=$_POST['hours'];
     $heure_supplementaire=$_POST['hoursXtra'];
-    $jour_absent=$_POST['joursAbsent'];
+    $jour_absent=$_POST['daysAbsent'];
 
     $revenu_brut=(($salaire*$heure)+ (($salaire * 1.5)*$heure_supplementaire))*52 ;
     printf("revenu brut %20.2f :<br>", $revenu_brut);

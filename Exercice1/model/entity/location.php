@@ -21,9 +21,7 @@ class location{
         throw new Exception("start date cant be before today.");
     }
     private function setEndDate($date){
-        if($this->start_date<$date){
-            $this->$end_date=$date;
-        }
+        if($this->start_date<$date) { $this->end_date=$date; }
         throw new Exception("end date cant be before start date.");
     }
     //getters
