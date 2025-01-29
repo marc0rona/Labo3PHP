@@ -5,7 +5,7 @@ class location{
     private $id;
     private $start_date;
     private $end_date;
-    private Book $books=[];
+    private Book $books;
     //constructeur
     function __construct(DateTime $start_date,DateTime $end_date){
         setStartDate($start_date);

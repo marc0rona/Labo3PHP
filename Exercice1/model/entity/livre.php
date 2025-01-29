@@ -1,5 +1,5 @@
 <?php
-// Cette classe a pour but definir un livre elle seras utilise pour faciliter la location 
+// Cette classe a pour but definir un livre elle sera utilise pour faciliter la location 
 
 //enum de genre de livre 
 Enum Genre : int
@@ -10,11 +10,12 @@ Enum Genre : int
     case existentialism=4;
     case romantique=5;
 
-    public static function getValue(string $str){
-        foreach(self::cases() as $genre ){
-            if($str===$genre->key){
-                return $genre->value;
-            }
+    public static function getValue(string $str) : int
+    {
+        foreach(self::cases() as $genre )
+        {
+            if($str===$genre->name) //not 'key'. en php, c 'name'
+            { return $genre->value; }
         }
         throw new Exception("$str n'est pas un genre valide.");
     }
@@ -28,10 +29,10 @@ class Book{
     private $auteur_name;
     private $number_page;
 
-    public function __construct(string $book_name, string $genre, string $auteur_name,string $number_page)
+    public function __construct(string $book_name, string $type, string $auteur_name,string $number_page)
     {
         $this->book_name=$book_name;
-        $this->genre=Genre::getValue($genre);
+        $this->genre=Genre::getValue($type);
         $this->auteur_name=$auteur_name;
         $this->number_page=$number_page;
     }
