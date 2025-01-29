@@ -2,7 +2,7 @@
 class Stock {
     private $produit_list=[];
 
-    function addProduit(Produit $produit,NotificationObeserver $observer){
+    function addProduit(Produit $produit){
         if(isset($this->produit_list[$produit->getName()])){
             throw new Exception("le produit existe deja");
         }else{

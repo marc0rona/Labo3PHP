@@ -1,7 +1,7 @@
 <?php
 
 class Facture{
-    private $achat_list=[];
+    private array  $achat_list=[];
 
    function __construct(){
         
@@ -10,11 +10,10 @@ class Facture{
         $name=$produit->getName();
         $prix=$produit->getPrix();
         if(isset($this->achat_list[$name])){
-            $achat=$this->achat_list[$name];
-            $achat[$name]['qte']+=$qte;
+
+            $this->achat_list[$name]['qte']+=$qte;
         }else{
-            $this->achat_list[$name]=["qte"=>$qte,
-                                "prix"=>$prix,];
+            $this->achat_list[$name]=['qte'=>$qte, 'prix'=>$prix,];
         }
     }
 

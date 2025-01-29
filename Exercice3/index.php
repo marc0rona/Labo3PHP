@@ -54,6 +54,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     if($product->getName()===$_POST['SelectedProd']){
       $facture->addProduit($product,$_POST['qte']);
       $product->removeQuantite($_POST['qte']);
+      $_SESSION['facture']=serialize($facture);
     }
   }
 
