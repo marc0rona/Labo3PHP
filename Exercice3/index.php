@@ -1,26 +1,64 @@
 <?php
+
+require "model/GestionStock.php";
 require "model/Produit.php";
 require "model/stock.php";
+require "model/Facture.php";
+session_start();
+//j'initialise se block simplement pour ne pas 
+//le reinitialiser tous les fois que j'ajoute un produit a facture
+if (!isset($_SESSION['stock'])) {
+  $stock = new Stock();
+  $gestion_stock = new GestionStock($stock);
+ 
   $pommes = new Produit("pomme",1);
-  
-  
   $pommes->setSeuil(100);
   $pommes->addQuantite(500);
+  $pommes->setObserver($gestion_stock);
 
   $patate = new Produit("patate",2);
   $patate->setSeuil(150);
   $patate->addQuantite(750);
+  $patate->setObserver($gestion_stock);
 
   $pain   = new Produit("pain",3);
   $pain->setSeuil(400);
   $pain->addQuantite(450);
+  $pain->setObserver($gestion_stock);
 
-  $stock = new Stock();
   $stock->addProduit($pommes);
   $stock->addProduit($patate);
   $stock->addProduit($pain);
+  $_SESSION['stock']=serialize($stock);
+  
+}else{
+ $stock=unserialize($_SESSION['stock']);
+
+ //perds ses references quand il est unserialized donc doit la reajouter
+ $gestion_stock = new GestionStock($stock); 
+ foreach ($stock->getStocklist() as $product) {
+     $product->setObserver($gestion_stock); 
+ }
+}
+if($_SERVER['REQUEST_METHOD']=='POST'){
+  if(!isset($_SESSION['facture'])){
+    $facture=new Facture();
+    $_SESSION['facture']=serialize($facture);
+  }
+  $facture=unserialize($_SESSION['facture']);
+
+  
 
 
+  foreach($stock->getStockList() as $product){
+    if($product->getName()===$_POST['SelectedProd']){
+      $facture->addProduit($product,$_POST['qte']);
+      $product->removeQuantite($_POST['qte']);
+    }
+  }
+
+  echo $facture->__toString();
+}
 ?>
 
 <!-- FRONT-END : HTML -->
@@ -53,6 +91,9 @@ require "model/stock.php";
     <br><br>
     <!--submit button -->
     <button type="submit"> rajout au panier </button>
+    </form>
+      <form>
+    <button type="submit"> confirmer la commande </button>
     </form>
 </body>
 </html> 

@@ -1,9 +1,8 @@
 <?php
-
-class Stock implements NotificationObserver{
+class Stock {
     private $produit_list=[];
 
-    function addProduit(Produit $produit){
+    function addProduit(Produit $produit,NotificationObeserver $observer){
         if(isset($this->produit_list[$produit->getName()])){
             throw new Exception("le produit existe deja");
         }else{
@@ -13,14 +12,7 @@ class Stock implements NotificationObserver{
     function getStocklist(){
         return $this->produit_list;
     }
-    function addQuantite(String $produit, int $val){
-        $produit=$this->produit_list[$produit->getName()];
-        $produit->addQuantite($val);
-    }
-    function removeQuantite(String $produit, int $val){
-        $produit=$this->produit_list[$produit->getName()];
-        $produit->removeQuantite($val);
-    }
+   
 
     
 
