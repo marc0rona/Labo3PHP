@@ -1,28 +1,32 @@
 <?php
-require "livre.php";
-//user define type qui permet la location de plusieurs livre,
+
+//user define type qui permet la location 
+//qui assure que la location d'un livre suit une logique
 class location{
     private $id;
     private $start_date;
     private $end_date;
-    private Book $books;
-    //constructeur
-    function __construct(DateTime $start_date,DateTime $end_date){
-        setStartDate($start_date);
-        setEndDate($end_date);
-    }
+    private $book_name;
+    
+    
 
     //setter
-    private function setStartDate($date){
+
+    //verifie si la date de emprunt est auj ou dans le futur
+     private function setStartDate($date){
         $today=new DateTime('now');
-        if($today<=$date){
+        
+        if($today->format('Y-m-d')<=$date){
             $this->start_date=$date;
-        }
-        throw new Exception("start date cant be before today.");
+        }else{
+        throw new Exception("start date cant be before today.".$date."   today:".$today->format('Y-m-d'));}
     }
+
+    //assure que la date de fin est apres la date de aujourd'hui
     private function setEndDate($date){
         if($this->start_date<$date) { $this->end_date=$date; }
-        throw new Exception("end date cant be before start date.");
+        else{
+        throw new Exception("end date cant be before start date.");}
     }
     //getters
     public function getStartDate(){
@@ -35,9 +39,16 @@ class location{
     public function getId(){
         return $this->id;
     }
-    public function getBooks(){
-        return $this->books;
+    public function getBook(){
+        return $this->book_name;
+    }
+
+    //constructeur
+    function __construct(int $id,string $start_date,string $end_date,string $book_name){
+        $this->id=$id;
+        $this->setStartDate($start_date);
+        $this->setEndDate($end_date);
+        $this->book_name=$book_name;
     }
 }
-
 ?>

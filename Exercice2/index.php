@@ -35,10 +35,12 @@
 <?php
  //version plate efficace et facile
  function facile(int $revenu_net,int $max, ){
+  $anne=1;
   while($max!=0){
     $tableau[]=$revenu_net;
     $calcul=$revenu_net*=1.05;
-    printf("revenu net: %20.2f <br>", $calcul) ;
+    printf("revenu net de l'anne %d: %20.2f <br>",$anne, $calcul) ;
+    $anne++;
     $max--;
   }
  }
