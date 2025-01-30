@@ -3,30 +3,31 @@
 class Facture{
     private array  $achat_list=[];
 
-   function __construct(){
-        
-    }
-    function addProduit(Produit $produit,int $qte){
-        $name=$produit->getName();
-        $prix=$produit->getPrix();
+    function addProduit(String $name,int $prix ,int $qte){
+
         if(isset($this->achat_list[$name])){
 
             $this->achat_list[$name]['qte']+=$qte;
+            
         }else{
             $this->achat_list[$name]=['qte'=>$qte, 'prix'=>$prix,];
+            
         }
     }
 
     function __toString(){
         $prix_total=0;
-        $str="";
+        $str="<table> <tr><th>Nom de l'article</th>
+        <th>prix unitaire</th>
+        <th>Quantite acheter</th> </tr>";
+        
         foreach($this->achat_list as $names=>$detail){
-            $str.="name: ".$names."<br>Quantite: ".$detail['qte'].
-            "<br>prix unitaire: ".$detail['prix'];
+            $str.="<tr><td>".$names."</td><td> ".$detail['prix']."$</td>
+            <td>".$detail['qte']."</td></tr>";
             $prix_total+=$detail['qte']*$detail['prix'];
 
         }
-        $str.="<br>Prix Total :". $prix_total;
+        $str.=" <tfoot><td>Prix Total :". $prix_total."</td></tfoot></table>";
         return $str;
     }
     

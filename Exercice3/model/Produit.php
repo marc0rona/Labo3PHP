@@ -6,10 +6,10 @@ class Produit{
     private int $quantite;//pour simplifier l'exercice
     private int $seuil;
     private $observer;
-    function __construct(String $nom,int $prix){
+    function __construct(String $nom,int $prix,int $qte){
         $this->nom=$nom;
         $this->prix=$prix;
-        $this->quantite=0;
+        $this->quantite=$qte;
         $this->seuil=0;
     }
     //setters
@@ -18,15 +18,6 @@ class Produit{
     }
     function setSeuil(int $val){
         $this->seuil+=$val;
-    }
-    function addQuantite(int $val){
-        $this->quantite+=$val;
-    }
-    function removeQuantite(int $val){
-        $this->quantite-=$val;
-        if($this->seuil>$this->quantite && isset($this->observer)){
-            $this->observer->LowStockAlert($this);
-        }
     }
     //getters
     function getName(){
