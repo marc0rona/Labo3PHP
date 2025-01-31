@@ -33,8 +33,8 @@
 </body>
 </html>
 <?php
- //version plate efficace et facile
- function facile(int $revenu_net,int $max, ){
+ //fonction pour trouver le salaire pour les prochaines annes
+ function salaireProchaineAnne(int $revenu_net,int $max, ){
   $anne=1;
   while($max!=0){
     $tableau[]=$revenu_net;
@@ -47,7 +47,7 @@
 
 
   if($_SERVER['REQUEST_METHOD']=='POST'){
-    //trouver salaire net tranche dimpot imposition officielle ci dessous
+   //trouver salaire net tranche dimpot imposition officielle ci dessous
    // https://www.revenuquebec.ca/fr/citoyens/declaration-de-revenus/produire-votre-declaration-de-revenus/taux-dimposition/
    
     $salaire=$_POST['initSalary'];
@@ -55,21 +55,24 @@
     $heure_supplementaire=$_POST['hoursXtra'];
     $jour_absent=$_POST['daysAbsent'];
 
+      //calcule le temps-demi 
     $revenu_brut=(($salaire*$heure)+ (($salaire * 1.5)*$heure_supplementaire))*52 ;
     printf("revenu brut %20.2f :<br>", $revenu_brut);
    
 
 
-    //doit etre des string sinon elle cast en int avant de le cast en string naturellement
+    //doit etre des string sinon elle se cast en int avant de se cast en string 
+    //j'ai appris cela de la maniere difficile
     $tranche=[
       "0.14" => 53255,
       "0.19" => 53240,
       "0.24" => 23095,
-      "0.2575" => PHP_INT_MAX,
+      "0.2575" => PHP_INT_MAX,//->constant
    ];
     $i=0;
     $revenu_net=0;
   
+    //enleve un % par tranche de revenue et retourne le revenue net
     foreach ($tranche as $taux => $limite) {
       echo "$taux <br>\n";
       echo $limite."<br>\n";
@@ -86,6 +89,6 @@
   
 
   echo "_________________________________________<br>";
-  facile($revenu_net,10);
+  salaireProchaineAnne($revenu_net,10);
   }
 ?>
