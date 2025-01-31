@@ -100,6 +100,8 @@ $currDate=date('Y-m-d');
     <button type="submit"> Confirmation d'Emprunt </button>
   </form>
 
+
+    <!--petit forme qui prends -->
   <h2> RETOUR </h2>
   <form action="retour.php" method="POST">
     <label for="id">Entrez le ID:</label><br>
